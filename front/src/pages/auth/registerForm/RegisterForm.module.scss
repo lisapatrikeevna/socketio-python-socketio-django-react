@@ -1,0 +1,76 @@
+.root{
+  height: max-content;
+  margin: 0 auto 0;
+  padding: 50px 0 30px;
+  background-color: var(--light-gray-color)!important;
+}
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 33px 36px 25px;
+  margin: 20px;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.link {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-bottom: 60px;
+  padding: 0;
+
+  font-size: 14px;
+  font-weight: 400;
+  text-align: right;
+}
+
+.button {
+  margin-bottom: 20px;
+  padding: 6px 0;
+}
+
+
+.underlineLinkWrapper {
+  position: relative;
+  text-align: center
+}
+
+.underlineLink {
+  position: relative;
+
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+
+  color: var(--color-primary-500);
+  text-decoration: none;
+}
+
+.underlineLink::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--color-primary-500);
+}
+
+.dontHaveAccount {
+  justify-content: center;
+  width: fit-content;
+  margin-bottom: 7px;
+  color: var(--color-light-900);
+}

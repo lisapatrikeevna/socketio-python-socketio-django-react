@@ -1,0 +1,32 @@
+pnpm create vite front
+pnpm i
+pnpm add @mui/material @emotion/react @emotion/styled
+pnpm add @mui/icons-material
+
+pnpm i react-router-dom
+pnpm i @reduxjs/toolkit react-redux
+pnpm add async-mutex
+pnpm i zod
+pnpm install socket.io-client
+pnpm add react-simple-captcha
+pnpm add react-hook-form
+pnpm add @hookform/resolvers
+pnpm add zod
+pnpm add @hookform/devtools
+pnpm add sass
+pnpm add react-simple-captcha
+
+you should used 20.19.3
+if err clear cache:
+pnpm store prune
+rm -rf node_modules
+pnpm install
+
+
+
+
+
+
+
+
+

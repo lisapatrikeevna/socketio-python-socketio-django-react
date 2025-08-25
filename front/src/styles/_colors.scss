@@ -1,0 +1,28 @@
+//colors.scss
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+//$background-color: #ecf0f1;
+$text-color: #2c3e50;
+$dark-gray-color:#666;
+$gray-color:#C4C4C4;
+$light-gray-color:#F5F5F5;
+$white-color:#fff;
+
+
+:root {
+  --primary-color: #13528c;
+  --secondary-color: #DCE8F5;
+  --background-light-color: #ecf0f1;
+  --text-color: #1E222E;
+  --light-text-color: #{$text-color};
+  --dark-gray-color: #{$dark-gray-color};
+  --gray-color: #{$gray-color};
+  --light-gray-color: #F7F7F7;
+  --white-color: #{$white-color};
+  --pink-color: #f3eaef;
+  --success-color: #DCE8F5;
+  --dark-bg-color:#101c2c;
+  //--info-color: #{$info-color};
+  //--warning-color: #{$warning-color};
+  //--error-color: #{$error-color};
+}
