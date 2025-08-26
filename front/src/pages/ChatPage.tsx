@@ -37,7 +37,7 @@ export const ChatPage = () => {
                        onChange={(e) => setText(e.target.value)}
                        onKeyDown={(e) => {
                            if (e.key === "Enter" && text.trim()) {
-                               sendMessage(1, 3, text.trim());
+                               sendMessage(1, user?.id||0, text.trim(), user?.username||'unknownUser');
                                setText("");
                            }
                        }}
