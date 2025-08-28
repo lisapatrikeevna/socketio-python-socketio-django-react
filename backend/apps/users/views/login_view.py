@@ -40,24 +40,23 @@ class LoginView(generics.GenericAPIView):
             }
 
             response = Response(response_data, status=status.HTTP_200_OK)
-
             response.set_cookie(
-                key='access_token',
-                value=access_token,
+                'access_token',
+                access_token,
                 httponly=True,
                 secure=True,
                 samesite='None'
             )
             response.set_cookie(
-                key='refresh_token',
-                value=refresh_token,
+                'refresh_token',
+                refresh_token,
                 httponly=True,
                 secure=True,
                 samesite='None'
             )
 
-            logger.info("Cookies set for access and refresh tokens.loginView(59)------")
+            print("Cookies set for access and refresh tokens.loginView(59)------")
             return response
 
-        logger.warning("Login failed with errors: %s,loginView(62)------", serializer.errors)
+        print("Login failed with errors: %s,loginView(62)------", serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

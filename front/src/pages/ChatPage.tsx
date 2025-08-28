@@ -28,7 +28,7 @@ export const ChatPage = () => {
         <h2>Чат</h2>
         <div style={{border: "1px solid gray", padding: "10px", marginBottom: "10px"}}>
             {messages.map((m, i) => (<div key={i}>
-                <strong>User {m.user_id}:</strong> {m.text}
+                <strong>User {m.nick}:</strong> {m.text}
             </div>))}
         </div>
 

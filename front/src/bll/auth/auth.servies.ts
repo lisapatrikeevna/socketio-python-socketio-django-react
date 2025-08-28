@@ -27,6 +27,7 @@ const authService=baseApi.injectEndpoints({
      query: args => {
        return {url: `/users/login/`, method: 'POST', body: JSON.stringify(args),
          headers: {'Content-Type': 'application/json',},
+         credentials: "include"
        }
      },
      invalidatesTags: ['Me'],
@@ -36,7 +37,8 @@ const authService=baseApi.injectEndpoints({
    // signUp: builder.mutation<void, SignUpArgs>({
    signUp: builder.mutation<responseRegisterType, SignUpArgs>({
      query: args => {
-       return { url: `/users/register/`, method: 'POST',body: args }
+       return { url: `/users/register/`, method: 'POST',body: args, credentials: "include"
+ }
      },
      invalidatesTags: ['Me'],
    }),
@@ -49,7 +51,7 @@ const authService=baseApi.injectEndpoints({
    logOut: builder.mutation<void, void>({
      query: () => {
        // debugger
-       return { url: `/users/logout/`, method: 'POST' }
+       return { url: `/users/logout/`, method: 'POST', credentials: "include"}
      },
      invalidatesTags: ['Me'],
    }),
