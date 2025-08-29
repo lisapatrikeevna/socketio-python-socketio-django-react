@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {TextField, Button} from "@mui/material";
+import {TextField, Button, Typography, Paper} from "@mui/material";
 import {socket} from "../bll/socketio/connect";
 import {joinChat, sendMessage, setupSocketListeners} from "../bll/socketio/socketEvents";
 import {useSelector} from "react-redux";
@@ -7,6 +7,7 @@ import type {RootStateType} from "../bll/store.ts";
 import type {UserType} from "../bll/auth/auth.type.ts";
 
 export const ChatPage = () => {
+    const [chatId, setChatId] = useState(1);
     const [text, setText] = useState("");
     const [messages, setMessages] = useState<any[]>([]);
     const user = useSelector<RootStateType, UserType | null>(state => state.app.user);
@@ -31,20 +32,26 @@ export const ChatPage = () => {
                 <strong>User {m.nick}:</strong> {m.text}
             </div>))}
         </div>
+        <Paper>
+            <Typography>select chat</Typography>
+            <TextField type={"number"} onChange={(e) => setChatId(e.target.value)} value={chatId}/>
+
+        </Paper>
+
 
         <div style={{display: "flex", gap: "10px", marginTop: "10px"}}>
             <TextField fullWidth label="Сообщение" variant="outlined" value={text}
                        onChange={(e) => setText(e.target.value)}
                        onKeyDown={(e) => {
                            if (e.key === "Enter" && text.trim()) {
-                               sendMessage(1, user?.id||0, text.trim(), user?.username||'unknownUser');
+                               sendMessage(chatId, user?.id||0, text.trim(), user?.username||'unknownUser');
                                setText("");
                            }
                        }}
             />
             <Button variant="contained" onClick={() => {
                     if (text.trim()) {
-                        sendMessage(1, 1, text.trim(),user?.username||'Vasya');
+                        sendMessage(chatId, 1, text.trim(),user?.username||'Vasya');
                         setText("");
                     } }} >
                 Отправить
