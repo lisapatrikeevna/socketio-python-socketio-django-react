@@ -3,12 +3,12 @@ from django.contrib.auth import get_user_model
 
 from apps.chats.models import Chat
 
-
+from backend.apps.users.models import User
 
 
 class ChatMessage(models.Model):
     chat = models.ForeignKey(Chat, related_name='messages', on_delete=models.CASCADE)
-    user = models.ForeignKey(get_user_model(), related_name='messages', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='messages', on_delete=models.CASCADE)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
