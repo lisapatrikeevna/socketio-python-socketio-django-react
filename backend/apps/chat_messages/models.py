@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 
 from apps.chats.models import Chat
 
-from backend.apps.users.models import User
+from apps.users.models import User
 
 
 class ChatMessage(models.Model):

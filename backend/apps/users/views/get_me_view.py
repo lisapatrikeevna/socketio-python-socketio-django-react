@@ -34,10 +34,3 @@ class MeView(generics.GenericAPIView):
             )
 
         return response
-        #
-        #         response.set_cookie('access_token', access_token, httponly=True, secure=True, samesite='None')
-        #         response.set_cookie('refresh_token', refresh_token, httponly=True, secure=True, samesite='None')
-        #
-        #         return response
-        #     else:
-        #         return Response({"detail": "User not found"}, status=status.HTTP_404_NOT_FOUND)
